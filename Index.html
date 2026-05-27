@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دیارییەکی تایبەت</title>
+    <title>جەژنانە</title>
     <style>
         body {
-            background-color: #0f172a; /* ڕەنگی باکگراوندی تاریک */
+            background-color: #0f172a; 
             color: white;
             font-family: Tahoma, Arial, sans-serif;
             display: flex;
@@ -24,16 +24,16 @@
             max-width: 90%;
             width: 340px;
         }
-        /* شاردنەوەی قۆناغەکان لە سەرەتادا */
         .step { display: none; animation: fadeIn 0.5s ease; }
-        /* پیشاندانی قۆناغی چالاک */
         .step.active { display: block; }
         
         .icon { font-size: 70px; margin-bottom: 15px; }
         h1 { font-size: 22px; color: #fbbf24; margin-bottom: 15px; }
         p { font-size: 15px; color: #cbd5e1; margin-bottom: 30px; line-height: 1.6; }
+        .money-text { color: #10b981; font-size: 20px; font-weight: bold; margin-top: 15px; }
+        
         button {
-            background-color: #be123c;
+            background-color: #10b981;
             color: white;
             border: none;
             padding: 12px 30px;
@@ -42,8 +42,9 @@
             cursor: pointer;
             transition: background 0.3s, transform 0.1s;
             font-family: inherit;
+            font-weight: bold;
         }
-        button:hover { background-color: #9f1239; }
+        button:hover { background-color: #059669; }
         button:active { transform: scale(0.95); }
 
         @keyframes fadeIn {
@@ -56,33 +57,31 @@
 
     <div class="container">
         <div id="step1" class="step active">
-            <div class="icon">🎁</div>
-            <h1>بەخێرهاتی</h1>
-            <p>دیارییەکی بچووک لەم کاتە پڕ بایەخەدا بۆ تۆ ئامادەیە</p>
-            <button onclick="nextStep(2)">کردنەوەی دیاری</button>
+            <div class="icon">🌙</div>
+            <h1>جەژنت پیرۆز بێت</h1>
+            <p>هیوادارم هەموو ڕۆژێکت جەژن و خۆشی بێت و هەمیشە سەرکەوتوو بیت.</p>
+            <button onclick="nextStep(2)">دیارییەکەت بکەرەوە</button>
         </div>
 
         <div id="step2" class="step">
-            <div class="icon">🎂</div>
-            <h1>کاتێکی خۆش</h1>
-            <p>ئاواتێک بخوازە پێش ئەوەی مۆمەکە بکوژێنیتەوە</p>
-            <button onclick="nextStep(3)">کوژاندنەوەی مۆم</button>
+            <div class="icon">✉️</div>
+            <h1>جەژنانەیەکی تایبەت</h1>
+            <p>دیارییەکی بچووک لەم جەژنەدا چاوەڕێت دەکات...</p>
+            <button onclick="nextStep(3)">وەرگرتنی جەژنانە</button>
         </div>
 
         <div id="step3" class="step">
-            <div class="icon">❤️</div>
-            <h1>ڕۆژی لەدایکبوونت پیرۆز ئاروین!</h1>
-            <p>هیوای ساڵێکی پڕ لە ئارامی و سەرکەوتنت بۆ دەخوازم. مرۆڤەکان بە تەمەنیان نا، بەو شوێنەوارە جوانانەی لە دڵی دەوروبەریان جێی دەهێڵن دەناسرێنەوە، و تۆ یەکێکیت لەو جوانترینانە.<br><br>تەمەنت درێژ و پڕ بێت لە خەندە</p>
+            <div class="icon">💸</div>
+            <h1>پیرۆزە!</h1>
+            <p class="money-text">5000 دینار جەژنانەت بە دیاری وەرگرت!</p>
+            <p style="font-size: 13px; color: #94a3b8; margin-top: 10px;">تێبینی: پارەکە تەنها لەسەر شاشەیە، داوای ڕاستەقینە مەکە 😂</p>
         </div>
     </div>
 
     <script>
         function nextStep(stepNumber) {
-            // شاردنەوەی هەموو قۆناغەکان
             const steps = document.querySelectorAll('.step');
             steps.forEach(step => step.classList.remove('active'));
-            
-            // پیشاندانی ئەو قۆناغەی کە مەبەستە
             document.getElementById('step' + stepNumber).classList.add('active');
         }
     </script>
